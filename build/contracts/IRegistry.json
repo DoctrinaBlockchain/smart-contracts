@@ -1,0 +1,2581 @@
+{
+  "contractName": "IRegistry",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DoctusCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DoctusDeleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DoctusModified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "name": "ServiceCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ServiceDeleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ServiceTagsModified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "name": "ServiveMetadataModified",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address[]",
+          "name": "members",
+          "type": "address[]"
+        }
+      ],
+      "name": "createDoctus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "changeDoctusOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "name": "changeDoctusMetadataURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "members",
+          "type": "address[]"
+        }
+      ],
+      "name": "addDoctusMembers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "members",
+          "type": "address[]"
+        }
+      ],
+      "name": "removeDoctusMembers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "deleteDoctus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "name": "createService",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "name": "updateService",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "deleteService",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "listDoctuses",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "dids",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getDoctusById",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "found",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "members",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "services",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getServicesForDoctus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "found",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "services",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "did",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getServiceById",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "found",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "metadataURI",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"DoctusCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"DoctusDeleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"DoctusModified\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"name\":\"ServiceCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"}],\"name\":\"ServiceDeleted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"}],\"name\":\"ServiceTagsModified\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"name\":\"ServiveMetadataModified\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"members\",\"type\":\"address[]\"}],\"name\":\"addDoctusMembers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"name\":\"changeDoctusMetadataURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"changeDoctusOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"},{\"internalType\":\"address[]\",\"name\":\"members\",\"type\":\"address[]\"}],\"name\":\"createDoctus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"name\":\"createService\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"deleteDoctus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"}],\"name\":\"deleteService\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"getDoctusById\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"found\",\"type\":\"bool\"},{\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"members\",\"type\":\"address[]\"},{\"internalType\":\"bytes32[]\",\"name\":\"services\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"}],\"name\":\"getServiceById\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"found\",\"type\":\"bool\"},{\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"}],\"name\":\"getServicesForDoctus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"found\",\"type\":\"bool\"},{\"internalType\":\"bytes32[]\",\"name\":\"services\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"listDoctuses\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"dids\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"address[]\",\"name\":\"members\",\"type\":\"address[]\"}],\"name\":\"removeDoctusMembers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"did\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"sid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"metadataURI\",\"type\":\"bytes\"}],\"name\":\"updateService\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DoctrinaAI (Tillo Bekov) \",\"kind\":\"dev\",\"methods\":{\"addDoctusMembers(bytes32,address[])\":{\"details\":\"Adds new members to the Doctus      Only the owner can add new members\",\"params\":{\"did\":\"ID of the Doctus\",\"members\":\"Array of members to add\"}},\"changeDoctusMetadataURI(bytes32,bytes)\":{\"details\":\"Updates the metadata for the Doctus      Only the owner can update the metadata \",\"params\":{\"did\":\"ID of the Doctus\",\"metadataURI\":\"New metadata URI\"}},\"changeDoctusOwner(bytes32,address)\":{\"details\":\"Updates the owner of Doctus.       Only the owner can call this function. Reverts if the id is not found.\",\"params\":{\"did\":\"ID of the Doctus\",\"newOwner\":\"Address of the new owner\"}},\"createDoctus(bytes32,bytes,address[])\":{\"details\":\"Adds a new Doctus. Reverts if the given Doctus id (did) has already been registered.\",\"params\":{\"did\":\"id of the Doctus to create, must be unique.\",\"members\":\"Array of member addresses to seed the Doctus with.\",\"metadataURI\":\"MetadataURI of Doctus to create, must be unique.\"}},\"createService(bytes32,bytes32,bytes)\":{\"details\":\"Create a new Service under the Doctus      Only the Doctus owner can create a new Service\",\"params\":{\"did\":\"ID of the doctus\",\"metadataURI\":\"URL for the Service Metadata\",\"sid\":\"Unique ID for the new Service\"}},\"deleteDoctus(bytes32)\":{\"details\":\"Deleted the Doctus       Only the owner can delete the Doctus\",\"params\":{\"did\":\"ID of the Doctus\"}},\"deleteService(bytes32,bytes32)\":{\"details\":\"Deletes the Service      Only the Doctus owner can delete the Service\",\"params\":{\"did\":\"ID of the Doctus\",\"sid\":\"ID of the Service\"}},\"getDoctusById(bytes32)\":{\"details\":\"Get the Doctus information by ID\",\"params\":{\"did\":\"ID of the Doctus\"},\"returns\":{\"found\":\"true if found, false if the ID is not found\",\"id\":\"ID of the Doctus\",\"members\":\"Array of IDs of the members\",\"metadataURI\":\"Metadata URI of teh Doctus\",\"owner\":\"Address of the owner\",\"services\":\" Array of Service ID under the Doctus\"}},\"getServiceById(bytes32,bytes32)\":{\"details\":\"Gets the service information by ID\",\"params\":{\"did\":\"ID of the Doctus\",\"sid\":\"ID of the Service\"},\"returns\":{\"found\":\"true if found false if not found\",\"id\":\"  ID of the Service if found\",\"metadataURI\":\"URl for the metadata location\"}},\"getServicesForDoctus(bytes32)\":{\"details\":\"Gets all services for the Doctus\",\"params\":{\"did\":\"ID of th Doctus\"},\"returns\":{\"found\":\"return true if found, false if not found\",\"services\":\"Array of Services for th Doctus\"}},\"listDoctuses()\":{\"details\":\"Gets the list of all Doctus in the registry \",\"returns\":{\"dids\":\"Array of Doctus IDs\"}},\"removeDoctusMembers(bytes32,address[])\":{\"details\":\"Removes members from the Doctus      Only the owner can remove the members\",\"params\":{\"did\":\"ID of the Doctus\",\"members\":\"Array of members to be deleted\"}},\"updateService(bytes32,bytes32,bytes)\":{\"details\":\"Updates the Service      Only the Doctus owner can update the Service\",\"params\":{\"did\":\"ID of the doctus\",\"metadataURI\":\"New metadata URL\",\"sid\":\"Unique ID for the new Service\"}}},\"title\":\"Interface for the AI services mnager on Doctrina\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IRegistry.sol\":\"IRegistry\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IRegistry.sol\":{\"keccak256\":\"0x32c50ea4110b772a603d2bc3ccd387ccb5372475939ca762462a454ffeba4c78\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e4baec5a694cf27b4dbba484fe66376f9e55c19cf711dffee0c99a4d177ac4a1\",\"dweb:/ipfs/QmU19u1gAPFEhetHnXpcfB13Ld92owHFLUtWNWScgVBdLv\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.7.0 <0.9.0;\n\n/**\n *  @title Interface for the AI services mnager on Doctrina\n  * @author DoctrinaAI (Tillo Bekov) \n */\n\n interface IRegistry {\n\n    // Doctus Management\n    // Doctus stands for an organization, team or company that provide AI services\n    event DoctusCreated(bytes32 indexed did);\n    event DoctusModified(bytes32 indexed did);\n    event DoctusDeleted(bytes32 indexed did);\n\n    /**\n      * @dev Adds a new Doctus. Reverts if the given Doctus id (did) has already been registered.\n      *\n      * @param did    id of the Doctus to create, must be unique.\n      * @param metadataURI  MetadataURI of Doctus to create, must be unique.\n      * @param members  Array of member addresses to seed the Doctus with.\n      */\n    function createDoctus(bytes32 did, bytes calldata metadataURI, address[] calldata members) external;\n\n    /**\n     * @dev Updates the owner of Doctus. \n     *      Only the owner can call this function. Reverts if the id is not found.\n     *\n     * @param did   ID of the Doctus\n     * @param newOwner  Address of the new owner\n     */\n    function changeDoctusOwner(bytes32 did, address newOwner) external;\n\n    /**\n     * @dev Updates the metadata for the Doctus\n     *      Only the owner can update the metadata\n     * \n     * @param did   ID of the Doctus\n     * @param metadataURI New metadata URI\n     */\n    function changeDoctusMetadataURI(bytes32 did, bytes calldata metadataURI) external;\n\n    /**\n     * @dev Adds new members to the Doctus\n     *      Only the owner can add new members\n     *\n     * @param did   ID of the Doctus\n     * @param members   Array of members to add\n     */\n    function addDoctusMembers(bytes32 did, address[] calldata members) external;\n\n    /**\n     * @dev Removes members from the Doctus\n     *      Only the owner can remove the members\n     *\n     * @param did   ID of the Doctus\n     * @param members   Array of members to be deleted\n     */\n    function removeDoctusMembers(bytes32 did, address[] calldata members) external;\n\n    /**\n     * @dev Deleted the Doctus \n     *      Only the owner can delete the Doctus\n     *\n     * @param did ID of the Doctus\n     */\n    function deleteDoctus(bytes32 did) external;\n\n\n    // Service Management\n\n\n    event ServiceCreated (bytes32 indexed did, bytes32 indexed sid, bytes metadataURI);\n    event ServiveMetadataModified (bytes32 indexed did, bytes32 indexed sid, bytes metadataURI);\n    event ServiceTagsModified (bytes32 indexed did, bytes32 indexed sid);\n    event ServiceDeleted (bytes32 indexed did, bytes32 indexed sid);\n\n    /**\n     * @dev Create a new Service under the Doctus\n     *      Only the Doctus owner can create a new Service\n     *\n     * @param did   ID of the doctus\n     * @param sid   Unique ID for the new Service\n     * @param metadataURI URL for the Service Metadata\n     */\n    function createService(bytes32 did, bytes32 sid, bytes calldata metadataURI) external;\n\n    /**\n     * @dev Updates the Service\n     *      Only the Doctus owner can update the Service\n     *\n     * @param did   ID of the doctus\n     * @param sid   Unique ID for the new Service\n     * @param metadataURI New metadata URL\n     */\n    function updateService(bytes32 did, bytes32 sid, bytes calldata metadataURI) external;\n\n    /**\n     * @dev Deletes the Service\n     *      Only the Doctus owner can delete the Service\n     *\n     * @param did   ID of the Doctus\n     * @param sid ID of the Service\n     */\n    function deleteService(bytes32 did, bytes32 sid) external;\n\n\n    // Getter functions\n\n    /**\n     * @dev Gets the list of all Doctus in the registry\n     * \n     * @return dids Array of Doctus IDs\n     */\n    function listDoctuses() external view returns (bytes32[] memory dids);\n\n    /**\n     * @dev Get the Doctus information by ID\n     *\n     * @param did ID of the Doctus\n     * @return found true if found, false if the ID is not found\n     * @return id ID of the Doctus\n     * @return metadataURI Metadata URI of teh Doctus\n     * @return owner Address of the owner\n     * @return members Array of IDs of the members\n     * @return services  Array of Service ID under the Doctus\n     */\n    function getDoctusById(bytes32 did) external view \n      returns (bool found, bytes32 id, bytes memory metadataURI, address owner, address[] memory members, bytes32[] memory services);\n\n    /**\n     * @dev Gets all services for the Doctus\n     *\n     * @param did ID of th Doctus\n     * @return found return true if found, false if not found\n     * @return services Array of Services for th Doctus\n     */\n    function getServicesForDoctus(bytes32 did) external view returns (bool found, bytes32[] memory services);\n\n    /**\n     * @dev Gets the service information by ID\n     *\n     * @param did ID of the Doctus\n     * @param sid  ID of the Service\n     * @return found true if found false if not found\n     * @return id   ID of the Service if found\n     * @return metadataURI URl for the metadata location\n     */\n    function getServiceById(bytes32 did, bytes32 sid) external view returns (bool found, bytes32 id, bytes memory metadataURI); \n\n }",
+  "sourcePath": "/home/nemo/Desktop/codes/truffle/doctrinaProject/contracts/IRegistry.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IRegistry.sol",
+    "exportedSymbols": {
+      "IRegistry": [
+        210
+      ]
+    },
+    "id": 211,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRegistry",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 38,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:105:2",
+          "text": "  @title Interface for the AI services mnager on Doctrina\n @author DoctrinaAI (Tillo Bekov) "
+        },
+        "fullyImplemented": false,
+        "id": 210,
+        "linearizedBaseContracts": [
+          210
+        ],
+        "name": "IRegistry",
+        "nameLocation": "184:9:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "eventSelector": "1a3f8193fa478a101603c64a06cb9673e46fddb8cf040f72865ca387fb194069",
+            "id": 42,
+            "name": "DoctusCreated",
+            "nameLocation": "315:13:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 40,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "345:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42,
+                  "src": "329:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "328:21:2"
+            },
+            "src": "309:41:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "50d13d4fb7f8527401f4a65436e8b6a82d46ba04fffbf26bca30eb57d32da23f",
+            "id": 46,
+            "name": "DoctusModified",
+            "nameLocation": "361:14:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 45,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 44,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "392:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46,
+                  "src": "376:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "376:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "375:21:2"
+            },
+            "src": "355:42:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "c8d14ab4cbe291a69180a78fe400084f89c0f5dd42d8142903f2cb234d52ebdf",
+            "id": 50,
+            "name": "DoctusDeleted",
+            "nameLocation": "408:13:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "438:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "422:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 47,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "422:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "421:21:2"
+            },
+            "src": "402:41:2"
+          },
+          {
+            "documentation": {
+              "id": 51,
+              "nodeType": "StructuredDocumentation",
+              "src": "449:336:2",
+              "text": " @dev Adds a new Doctus. Reverts if the given Doctus id (did) has already been registered.\n @param did    id of the Doctus to create, must be unique.\n @param metadataURI  MetadataURI of Doctus to create, must be unique.\n @param members  Array of member addresses to seed the Doctus with."
+            },
+            "functionSelector": "18c9b289",
+            "id": 61,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createDoctus",
+            "nameLocation": "799:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "820:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "812:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 52,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "812:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 55,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "840:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "825:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 58,
+                  "mutability": "mutable",
+                  "name": "members",
+                  "nameLocation": "872:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "853:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 56,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "853:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 57,
+                    "nodeType": "ArrayTypeName",
+                    "src": "853:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "811:69:2"
+            },
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "889:0:2"
+            },
+            "scope": 210,
+            "src": "790:100:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 62,
+              "nodeType": "StructuredDocumentation",
+              "src": "896:229:2",
+              "text": " @dev Updates the owner of Doctus. \n      Only the owner can call this function. Reverts if the id is not found.\n @param did   ID of the Doctus\n @param newOwner  Address of the new owner"
+            },
+            "functionSelector": "06247fe5",
+            "id": 69,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeDoctusOwner",
+            "nameLocation": "1139:17:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "1165:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 69,
+                  "src": "1157:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1157:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 66,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "1178:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 69,
+                  "src": "1170:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1170:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1156:31:2"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1196:0:2"
+            },
+            "scope": 210,
+            "src": "1130:67:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 70,
+              "nodeType": "StructuredDocumentation",
+              "src": "1203:198:2",
+              "text": " @dev Updates the metadata for the Doctus\n      Only the owner can update the metadata\n \n @param did   ID of the Doctus\n @param metadataURI New metadata URI"
+            },
+            "functionSelector": "93d8981e",
+            "id": 77,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeDoctusMetadataURI",
+            "nameLocation": "1415:23:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 75,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 72,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "1447:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "1439:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 71,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1439:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 74,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "1467:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "1452:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 73,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1452:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1438:41:2"
+            },
+            "returnParameters": {
+              "id": 76,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1488:0:2"
+            },
+            "scope": 210,
+            "src": "1406:83:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 78,
+              "nodeType": "StructuredDocumentation",
+              "src": "1495:193:2",
+              "text": " @dev Adds new members to the Doctus\n      Only the owner can add new members\n @param did   ID of the Doctus\n @param members   Array of members to add"
+            },
+            "functionSelector": "6107e936",
+            "id": 86,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addDoctusMembers",
+            "nameLocation": "1702:16:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "1727:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "1719:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1719:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 83,
+                  "mutability": "mutable",
+                  "name": "members",
+                  "nameLocation": "1751:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 86,
+                  "src": "1732:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 81,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1732:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 82,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1732:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1718:41:2"
+            },
+            "returnParameters": {
+              "id": 85,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1768:0:2"
+            },
+            "scope": 210,
+            "src": "1693:76:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 87,
+              "nodeType": "StructuredDocumentation",
+              "src": "1775:204:2",
+              "text": " @dev Removes members from the Doctus\n      Only the owner can remove the members\n @param did   ID of the Doctus\n @param members   Array of members to be deleted"
+            },
+            "functionSelector": "413ace11",
+            "id": 95,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeDoctusMembers",
+            "nameLocation": "1993:19:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 89,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2021:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "2013:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 88,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2013:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 92,
+                  "mutability": "mutable",
+                  "name": "members",
+                  "nameLocation": "2045:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 95,
+                  "src": "2026:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 90,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2026:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 91,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2026:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2012:41:2"
+            },
+            "returnParameters": {
+              "id": 94,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2062:0:2"
+            },
+            "scope": 210,
+            "src": "1984:79:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 96,
+              "nodeType": "StructuredDocumentation",
+              "src": "2069:134:2",
+              "text": " @dev Deleted the Doctus \n      Only the owner can delete the Doctus\n @param did ID of the Doctus"
+            },
+            "functionSelector": "d204e42b",
+            "id": 101,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deleteDoctus",
+            "nameLocation": "2217:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 98,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2238:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 101,
+                  "src": "2230:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 97,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2230:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2229:13:2"
+            },
+            "returnParameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2251:0:2"
+            },
+            "scope": 210,
+            "src": "2208:44:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "3229c7118d95880b1bb8abc6231f47f1a63d7b1e7e22fbd91a8ccffc9fa75df9",
+            "id": 109,
+            "name": "ServiceCreated",
+            "nameLocation": "2293:14:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 103,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2325:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "2309:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 102,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2309:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 105,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "2346:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "2330:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2330:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 107,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "2357:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 109,
+                  "src": "2351:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 106,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2351:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2308:61:2"
+            },
+            "src": "2287:83:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "6ab4031de503598fb1d30ff821ab0311d24fde0fad881f25e0dac1acced98502",
+            "id": 117,
+            "name": "ServiveMetadataModified",
+            "nameLocation": "2381:23:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 116,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2422:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "2406:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2406:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 113,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "2443:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "2427:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 112,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2427:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 115,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "2454:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 117,
+                  "src": "2448:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 114,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2448:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2405:61:2"
+            },
+            "src": "2375:92:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "d8b715d9bf49bca034a993b5b934475414e84c904dcbf90dbddd139808b97b05",
+            "id": 123,
+            "name": "ServiceTagsModified",
+            "nameLocation": "2478:19:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 119,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2515:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 123,
+                  "src": "2499:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 118,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2499:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 121,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "2536:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 123,
+                  "src": "2520:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 120,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2520:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2498:42:2"
+            },
+            "src": "2472:69:2"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "3caed2ddcd24bae20b0075a02d974ba3a229dace98271af93ce8c8f3ebd9d272",
+            "id": 129,
+            "name": "ServiceDeleted",
+            "nameLocation": "2552:14:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 128,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 125,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2584:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "2568:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 124,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2568:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 127,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "2605:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "2589:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 126,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2589:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2567:42:2"
+            },
+            "src": "2546:64:2"
+          },
+          {
+            "documentation": {
+              "id": 130,
+              "nodeType": "StructuredDocumentation",
+              "src": "2616:269:2",
+              "text": " @dev Create a new Service under the Doctus\n      Only the Doctus owner can create a new Service\n @param did   ID of the doctus\n @param sid   Unique ID for the new Service\n @param metadataURI URL for the Service Metadata"
+            },
+            "functionSelector": "4ca54fc0",
+            "id": 139,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createService",
+            "nameLocation": "2899:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 137,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 132,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "2921:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 139,
+                  "src": "2913:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 131,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2913:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 134,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "2934:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 139,
+                  "src": "2926:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 133,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2926:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 136,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "2954:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 139,
+                  "src": "2939:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 135,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2939:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2912:54:2"
+            },
+            "returnParameters": {
+              "id": 138,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2975:0:2"
+            },
+            "scope": 210,
+            "src": "2890:86:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 140,
+              "nodeType": "StructuredDocumentation",
+              "src": "2982:237:2",
+              "text": " @dev Updates the Service\n      Only the Doctus owner can update the Service\n @param did   ID of the doctus\n @param sid   Unique ID for the new Service\n @param metadataURI New metadata URL"
+            },
+            "functionSelector": "7411f7c7",
+            "id": 149,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateService",
+            "nameLocation": "3233:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 142,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "3255:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "3247:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 141,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3247:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 144,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "3268:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "3260:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 143,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3260:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 146,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "3288:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "3273:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 145,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3273:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3246:54:2"
+            },
+            "returnParameters": {
+              "id": 148,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3309:0:2"
+            },
+            "scope": 210,
+            "src": "3224:86:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 150,
+              "nodeType": "StructuredDocumentation",
+              "src": "3316:180:2",
+              "text": " @dev Deletes the Service\n      Only the Doctus owner can delete the Service\n @param did   ID of the Doctus\n @param sid ID of the Service"
+            },
+            "functionSelector": "8844e3e6",
+            "id": 157,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deleteService",
+            "nameLocation": "3510:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 152,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "3532:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 157,
+                  "src": "3524:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 151,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3524:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 154,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "3545:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 157,
+                  "src": "3537:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 153,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3537:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3523:26:2"
+            },
+            "returnParameters": {
+              "id": 156,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3558:0:2"
+            },
+            "scope": 210,
+            "src": "3501:58:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 158,
+              "nodeType": "StructuredDocumentation",
+              "src": "3591:115:2",
+              "text": " @dev Gets the list of all Doctus in the registry\n \n @return dids Array of Doctus IDs"
+            },
+            "functionSelector": "33e2e87c",
+            "id": 164,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listDoctuses",
+            "nameLocation": "3720:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3732:2:2"
+            },
+            "returnParameters": {
+              "id": 163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 162,
+                  "mutability": "mutable",
+                  "name": "dids",
+                  "nameLocation": "3775:4:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 164,
+                  "src": "3758:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 160,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "3758:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 161,
+                    "nodeType": "ArrayTypeName",
+                    "src": "3758:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3757:23:2"
+            },
+            "scope": 210,
+            "src": "3711:70:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 165,
+              "nodeType": "StructuredDocumentation",
+              "src": "3787:407:2",
+              "text": " @dev Get the Doctus information by ID\n @param did ID of the Doctus\n @return found true if found, false if the ID is not found\n @return id ID of the Doctus\n @return metadataURI Metadata URI of teh Doctus\n @return owner Address of the owner\n @return members Array of IDs of the members\n @return services  Array of Service ID under the Doctus"
+            },
+            "functionSelector": "3d77febc",
+            "id": 184,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDoctusById",
+            "nameLocation": "4208:13:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 168,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 167,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "4230:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4222:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 166,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4222:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4221:13:2"
+            },
+            "returnParameters": {
+              "id": 183,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 170,
+                  "mutability": "mutable",
+                  "name": "found",
+                  "nameLocation": "4270:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4265:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 169,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4265:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 172,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "4285:2:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4277:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 171,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4277:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 174,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "4302:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4289:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 173,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4289:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 176,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "4323:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4315:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 175,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4315:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 179,
+                  "mutability": "mutable",
+                  "name": "members",
+                  "nameLocation": "4347:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4330:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 177,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4330:7:2",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 178,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4330:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 182,
+                  "mutability": "mutable",
+                  "name": "services",
+                  "nameLocation": "4373:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 184,
+                  "src": "4356:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 180,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4356:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 181,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4356:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4264:118:2"
+            },
+            "scope": 210,
+            "src": "4199:184:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 185,
+              "nodeType": "StructuredDocumentation",
+              "src": "4389:215:2",
+              "text": " @dev Gets all services for the Doctus\n @param did ID of th Doctus\n @return found return true if found, false if not found\n @return services Array of Services for th Doctus"
+            },
+            "functionSelector": "fa4f646f",
+            "id": 195,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getServicesForDoctus",
+            "nameLocation": "4618:20:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 187,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "4647:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 195,
+                  "src": "4639:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 186,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4639:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4638:13:2"
+            },
+            "returnParameters": {
+              "id": 194,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 190,
+                  "mutability": "mutable",
+                  "name": "found",
+                  "nameLocation": "4680:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 195,
+                  "src": "4675:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 189,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4675:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 193,
+                  "mutability": "mutable",
+                  "name": "services",
+                  "nameLocation": "4704:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 195,
+                  "src": "4687:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 191,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4687:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 192,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4687:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4674:39:2"
+            },
+            "scope": 210,
+            "src": "4609:105:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 196,
+              "nodeType": "StructuredDocumentation",
+              "src": "4720:295:2",
+              "text": " @dev Gets the service information by ID\n @param did ID of the Doctus\n @param sid  ID of the Service\n @return found true if found false if not found\n @return id   ID of the Service if found\n @return metadataURI URl for the metadata location"
+            },
+            "functionSelector": "bc050b0c",
+            "id": 209,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getServiceById",
+            "nameLocation": "5029:14:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 201,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 198,
+                  "mutability": "mutable",
+                  "name": "did",
+                  "nameLocation": "5052:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 209,
+                  "src": "5044:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5044:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 200,
+                  "mutability": "mutable",
+                  "name": "sid",
+                  "nameLocation": "5065:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 209,
+                  "src": "5057:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 199,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5057:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5043:26:2"
+            },
+            "returnParameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 203,
+                  "mutability": "mutable",
+                  "name": "found",
+                  "nameLocation": "5098:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 209,
+                  "src": "5093:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 202,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5093:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 205,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "5113:2:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 209,
+                  "src": "5105:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 204,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5105:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 207,
+                  "mutability": "mutable",
+                  "name": "metadataURI",
+                  "nameLocation": "5130:11:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 209,
+                  "src": "5117:24:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 206,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5117:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5092:50:2"
+            },
+            "scope": 210,
+            "src": "5020:123:2",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 211,
+        "src": "174:4974:2",
+        "usedErrors": [],
+        "usedEvents": [
+          42,
+          46,
+          50,
+          109,
+          117,
+          123,
+          129
+        ]
+      }
+    ],
+    "src": "33:5115:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2023-10-31T17:00:23.983Z",
+  "devdoc": {
+    "author": "DoctrinaAI (Tillo Bekov) ",
+    "kind": "dev",
+    "methods": {
+      "addDoctusMembers(bytes32,address[])": {
+        "details": "Adds new members to the Doctus      Only the owner can add new members",
+        "params": {
+          "did": "ID of the Doctus",
+          "members": "Array of members to add"
+        }
+      },
+      "changeDoctusMetadataURI(bytes32,bytes)": {
+        "details": "Updates the metadata for the Doctus      Only the owner can update the metadata ",
+        "params": {
+          "did": "ID of the Doctus",
+          "metadataURI": "New metadata URI"
+        }
+      },
+      "changeDoctusOwner(bytes32,address)": {
+        "details": "Updates the owner of Doctus.       Only the owner can call this function. Reverts if the id is not found.",
+        "params": {
+          "did": "ID of the Doctus",
+          "newOwner": "Address of the new owner"
+        }
+      },
+      "createDoctus(bytes32,bytes,address[])": {
+        "details": "Adds a new Doctus. Reverts if the given Doctus id (did) has already been registered.",
+        "params": {
+          "did": "id of the Doctus to create, must be unique.",
+          "members": "Array of member addresses to seed the Doctus with.",
+          "metadataURI": "MetadataURI of Doctus to create, must be unique."
+        }
+      },
+      "createService(bytes32,bytes32,bytes)": {
+        "details": "Create a new Service under the Doctus      Only the Doctus owner can create a new Service",
+        "params": {
+          "did": "ID of the doctus",
+          "metadataURI": "URL for the Service Metadata",
+          "sid": "Unique ID for the new Service"
+        }
+      },
+      "deleteDoctus(bytes32)": {
+        "details": "Deleted the Doctus       Only the owner can delete the Doctus",
+        "params": {
+          "did": "ID of the Doctus"
+        }
+      },
+      "deleteService(bytes32,bytes32)": {
+        "details": "Deletes the Service      Only the Doctus owner can delete the Service",
+        "params": {
+          "did": "ID of the Doctus",
+          "sid": "ID of the Service"
+        }
+      },
+      "getDoctusById(bytes32)": {
+        "details": "Get the Doctus information by ID",
+        "params": {
+          "did": "ID of the Doctus"
+        },
+        "returns": {
+          "found": "true if found, false if the ID is not found",
+          "id": "ID of the Doctus",
+          "members": "Array of IDs of the members",
+          "metadataURI": "Metadata URI of teh Doctus",
+          "owner": "Address of the owner",
+          "services": " Array of Service ID under the Doctus"
+        }
+      },
+      "getServiceById(bytes32,bytes32)": {
+        "details": "Gets the service information by ID",
+        "params": {
+          "did": "ID of the Doctus",
+          "sid": "ID of the Service"
+        },
+        "returns": {
+          "found": "true if found false if not found",
+          "id": "  ID of the Service if found",
+          "metadataURI": "URl for the metadata location"
+        }
+      },
+      "getServicesForDoctus(bytes32)": {
+        "details": "Gets all services for the Doctus",
+        "params": {
+          "did": "ID of th Doctus"
+        },
+        "returns": {
+          "found": "return true if found, false if not found",
+          "services": "Array of Services for th Doctus"
+        }
+      },
+      "listDoctuses()": {
+        "details": "Gets the list of all Doctus in the registry ",
+        "returns": {
+          "dids": "Array of Doctus IDs"
+        }
+      },
+      "removeDoctusMembers(bytes32,address[])": {
+        "details": "Removes members from the Doctus      Only the owner can remove the members",
+        "params": {
+          "did": "ID of the Doctus",
+          "members": "Array of members to be deleted"
+        }
+      },
+      "updateService(bytes32,bytes32,bytes)": {
+        "details": "Updates the Service      Only the Doctus owner can update the Service",
+        "params": {
+          "did": "ID of the doctus",
+          "metadataURI": "New metadata URL",
+          "sid": "Unique ID for the new Service"
+        }
+      }
+    },
+    "title": "Interface for the AI services mnager on Doctrina",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

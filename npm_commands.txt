@@ -1,0 +1,3 @@
+npm install dotenv
+npm install @openzeppelin/contracts
+npm i @truffle/hdwallet-provider@next
